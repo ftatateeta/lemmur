@@ -55,10 +55,10 @@ abstract class goToUser {
 void goToPost(BuildContext context, String instanceHost, int postId) =>
     Navigator.of(context).push(FullPostPage.route(postId, instanceHost));
 
-void goToMedia(BuildContext context, String url) => Navigator.push(
+void goToMedia(BuildContext context, String url, String heroTag) => Navigator.push(
       context,
       PageRouteBuilder(
-        pageBuilder: (_, __, ___) => MediaViewPage(url),
+        pageBuilder: (_, __, ___) => MediaViewPage(url, heroTag: heroTag),
         opaque: false,
         transitionsBuilder: (_, animation, __, child) =>
             FadeTransition(opacity: animation, child: child),
